@@ -13,6 +13,30 @@ export const ProfileContainer = styled.div`
   justify-content: center;
   text-align: left;
   gap: 2rem;
+  position: relative;
+
+  .link {
+    position: absolute;
+    right: 2rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: .75rem;
+    font-weight: bold;
+
+    color: ${props => props.theme['blue']};
+
+    :hover {
+      border-bottom: 1px solid ${props => props.theme['blue']};
+    }
+
+  }
 `
 
 export const ProfileContent = styled.div`
@@ -23,13 +47,14 @@ export const ProfileContent = styled.div`
 
  h1 {
   margin-bottom: .5rem;
+  font-size: 1.5rem;
  }
 
  .userInfos {
   display: flex;
   gap: 1.5rem;
   margin-top: 1.5rem;
-  text-align: center;
+  /* text-align: center; */
   align-items: center;
  }
 
@@ -37,5 +62,8 @@ export const ProfileContent = styled.div`
   display: flex;
   align-items: center;
   gap: .5rem;
+
+  text-decoration: none;
+  color:${props => props.theme['base-subtitle']};
  }
 `

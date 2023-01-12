@@ -5,6 +5,7 @@ import {
   faCoffee,
   faBuilding,
   faUserGroup,
+  faArrowUpRightFromSquare,
 } from "@fortawesome/free-solid-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
@@ -26,22 +27,26 @@ export function Profile() {
         </p>
 
         <div className="userInfos">
-          <div className="userInfo">
-            <FontAwesomeIcon icon={faGithub} />
+          <a className="userInfo" href="#">
+            <FontAwesomeIcon icon={faGithub} color={"#3A536B"} />
             Jsbrito
-          </div>
+          </a>
 
-          <div className="userInfo">
-            <FontAwesomeIcon icon={faBuilding} />
+          <a className="userInfo" href="#">
+            <FontAwesomeIcon icon={faBuilding} color={"#3A536B"} />
             Rocketseat
-          </div>
+          </a>
 
-          <div className="userInfo">
-            <FontAwesomeIcon icon={faUserGroup} />
+          <a className="userInfo" href="#">
+            <FontAwesomeIcon icon={faUserGroup} color={"#3A536B"} />
             32 seguidores
-          </div>
+          </a>
         </div>
       </ProfileContent>
+      <a className="link" href="#">
+        Github
+        <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
+      </a>
     </ProfileContainer>
   );
 }
