@@ -15,6 +15,14 @@ export const ProfileContainer = styled.div`
   gap: 2rem;
   position: relative;
 
+  .avatar {
+    img {
+      border-radius: 8px;
+      width: 9.25rem;
+      height: 9.25rem;
+    }
+  }
+
   .link {
     position: absolute;
     right: 2rem;
