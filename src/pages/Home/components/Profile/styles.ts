@@ -7,10 +7,11 @@ export const ProfileContainer = styled.div`
 
   padding: 2rem;
   max-width: 54rem;
+  width: 100%;
 
   display: flex;
   align-self: center;
-  justify-content: center;
+  /* justify-content: center; */
   text-align: left;
   gap: 2rem;
   position: relative;

@@ -34,9 +34,14 @@ export function Profile() {
           {!!data.company ? (
             <a className="userInfo" href="#">
               <FontAwesomeIcon icon={faBuilding} color={"#3A536B"} />
-              teste
+              {data.company}
             </a>
-          ) : null}
+          ) : (
+            <a className="userInfo" href="#">
+              <FontAwesomeIcon icon={faBuilding} color={"#3A536B"} />
+              N/A
+            </a>
+          )}
 
           <a className="userInfo" href="#">
             <FontAwesomeIcon icon={faUserGroup} color={"#3A536B"} />

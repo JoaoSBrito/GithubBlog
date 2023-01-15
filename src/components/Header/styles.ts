@@ -5,6 +5,7 @@ export const HeaderContainer = styled.header`
   height: 18.5rem;
 
   background: url('/Cover.png') no-repeat center center;
+  background-size: cover;
 
   display: flex;
   align-items: center;

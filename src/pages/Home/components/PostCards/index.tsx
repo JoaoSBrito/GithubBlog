@@ -1,9 +1,29 @@
+import { useContext } from "react";
+import { GitblogContext } from "../../../../context/GitblogContext";
+import { dateFormatter } from "../../../../util/formatter";
 import { CardContainer, PostCardsContainer } from "./styles";
 
 export function PostCards() {
+  const { issueData } = useContext(GitblogContext);
+
   return (
     <PostCardsContainer>
-      <CardContainer href="#">
+      {issueData.map((issue) => {
+        return (
+          <CardContainer>
+            <div className="title">
+              <h3>{issue.title}</h3>
+              <span>{dateFormatter.format(new Date(issue.created_at))}</span>
+            </div>
+
+            <div className="content">
+              {" "}
+              <p>{issue.body}</p>
+            </div>
+          </CardContainer>
+        );
+      })}
+      {/* <CardContainer href="#">
         <div className="title">
           <h3>JavaScript data types and data structures</h3>
           <span>Há 3 dias</span>
@@ -64,7 +84,7 @@ export function PostCards() {
             list the built-in data structures available in
           </p>
         </div>
-      </CardContainer>
+      </CardContainer> */}
     </PostCardsContainer>
   );
 }
