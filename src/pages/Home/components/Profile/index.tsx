@@ -8,8 +8,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
-import { useContext, useEffect, useState } from "react";
-import { api } from "../../../../lib/axios";
+import { useContext } from "react";
 import { GitblogContext } from "../../../../context/GitblogContext";
 
 export function Profile() {

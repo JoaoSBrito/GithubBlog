@@ -1,7 +1,8 @@
 import { useContext } from "react";
 import { GitblogContext } from "../../../../context/GitblogContext";
-import { dateFormatter } from "../../../../util/formatter";
 import { CardContainer, PostCardsContainer } from "./styles";
+import ptBR from "date-fns/locale/pt-BR";
+import { formatDistanceToNow } from "date-fns";
 
 export function PostCards() {
   const { issueData } = useContext(GitblogContext);
@@ -13,7 +14,12 @@ export function PostCards() {
           <CardContainer>
             <div className="title">
               <h3>{issue.title}</h3>
-              <span>{dateFormatter.format(new Date(issue.created_at))}</span>
+              <span>
+                {formatDistanceToNow(new Date(issue.created_at), {
+                  addSuffix: true,
+                  locale: ptBR,
+                })}
+              </span>
             </div>
 
             <div className="content">
@@ -23,68 +29,6 @@ export function PostCards() {
           </CardContainer>
         );
       })}
-      {/* <CardContainer href="#">
-        <div className="title">
-          <h3>JavaScript data types and data structures</h3>
-          <span>Há 3 dias</span>
-        </div>
-
-        <div className="content">
-          <p>
-            Programming languages all have built-in data structures, but these
-            often differ from one language to another. This article attempts to
-            list the built-in data structures available in Programming languages
-            all have built-in data structures, but these often differ from one
-            language to another. This article attempts to list the built-in data
-            structures available in
-          </p>
-        </div>
-      </CardContainer>
-
-      <CardContainer href="#">
-        <div className="title">
-          <h3>JavaScript data types and data structures</h3>
-          <span>Há 3 dias</span>
-        </div>
-
-        <div className="content">
-          <p>
-            Programming languages all have built-in data structures, but these
-            often differ from one language to another. This article attempts to
-            list the built-in data structures available in
-          </p>
-        </div>
-      </CardContainer>
-
-      <CardContainer href="#">
-        <div className="title">
-          <h3>JavaScript data types and data structures</h3>
-          <span>Há 3 dias</span>
-        </div>
-
-        <div className="content">
-          <p>
-            Programming languages all have built-in data structures, but these
-            often differ from one language to another. This article attempts to
-            list the built-in data structures available in
-          </p>
-        </div>
-      </CardContainer>
-
-      <CardContainer href="#">
-        <div className="title">
-          <h3>JavaScript data types and data structures</h3>
-          <span>Há 3 dias</span>
-        </div>
-
-        <div className="content">
-          <p>
-            Programming languages all have built-in data structures, but these
-            often differ from one language to another. This article attempts to
-            list the built-in data structures available in
-          </p>
-        </div>
-      </CardContainer> */}
     </PostCardsContainer>
   );
 }
