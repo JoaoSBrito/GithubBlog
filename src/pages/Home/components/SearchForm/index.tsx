@@ -12,10 +12,6 @@ const SearchFormSchema = zod.object({
 
 type SearchFormInputType = zod.infer<typeof SearchFormSchema>;
 
-interface SearchFormProps {
-  getPost: (query?: string) => Promise<void>;
-}
-
 export function SearchForm() {
   const { getPosts } = useContext(GitblogContext);
   const { register, handleSubmit } = useForm<SearchFormInputType>({

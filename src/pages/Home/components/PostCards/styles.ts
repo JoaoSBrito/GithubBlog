@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from 'react-router-dom'
 
 export const PostCardsContainer = styled.div`
   max-width: 54rem;
@@ -10,9 +11,10 @@ export const PostCardsContainer = styled.div`
   gap: 2rem;
   margin-top: 3rem;
   margin-bottom: 8rem;
+  text-decoration: none;
 `
 
-export const CardContainer =styled.a`
+export const CardContainer =styled(Link)`
   padding: 2rem;
   
   background-color: ${props => props.theme['base-post']};

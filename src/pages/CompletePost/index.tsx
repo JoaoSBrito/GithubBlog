@@ -1,5 +1,5 @@
 import { Header } from "../../components/Header";
-import { Post } from "./Post";
+import { PostHeader } from "./PostHeader";
 import { CompletePostContainer } from "./styles";
 
 export function CompletePost() {
@@ -8,7 +8,7 @@ export function CompletePost() {
       <Header />
 
       <CompletePostContainer>
-        <Post />
+        <PostHeader />
       </CompletePostContainer>
     </>
   );

@@ -5,6 +5,7 @@ import {
   useEffect,
   useState,
 } from "react";
+import { useParams } from "react-router-dom";
 import { api } from "../lib/axios";
 
 interface GitblogProviderProps {
@@ -21,6 +22,7 @@ interface userData {
 }
 
 interface issueData {
+  id: string;
   title: string;
   created_at: string;
   body: string;
@@ -29,10 +31,15 @@ interface issueData {
   comments: number;
 }
 
+export interface allData {
+  issuesData: issueData;
+  usersData: userData;
+}
+
 interface GitblogContextType {
   data: userData;
   issueData: issueData[];
-  getPosts: () => void;
+  getPosts: (query?: string) => void;
 }
 
 export const GitblogContext = createContext({} as GitblogContextType);
@@ -40,6 +47,7 @@ export const GitblogContext = createContext({} as GitblogContextType);
 export function GitblogProvider({ children }: GitblogProviderProps) {
   const [data, setData] = useState<userData>({} as userData);
   const [issueData, setIssueData] = useState([] as issueData[]);
+  // const [postData, setPostData] = useState([]);
 
   const [isLoading, setIsLoading] = useState(true);
 
