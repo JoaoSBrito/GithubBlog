@@ -26,7 +26,7 @@ interface issueData {
   title: string;
   created_at: string;
   body: string;
-  number: number;
+  number: any;
   html_url: string;
   comments: number;
 }
